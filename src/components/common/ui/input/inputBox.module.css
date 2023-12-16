@@ -1,0 +1,14 @@
+.inpuText {
+    border: 1px solid theme('colors.neutral.300');
+    display: block;
+    /* padding: 0.5rem; */
+    width: 100%;
+}
+
+.inputLabel {
+    text-align: left;
+    font-size: small;
+    text-transform: uppercase;
+    color: theme('colors.neutral.400');
+    display: block;
+}
