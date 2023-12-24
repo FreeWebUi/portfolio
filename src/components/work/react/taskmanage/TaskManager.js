@@ -49,13 +49,25 @@ export default function ProjectManager() {
         })
     }
 
+    function handleDeleteProject() {
+        setProjectState(
+            prevState => {
+                return {
+                    ...prevState,
+                    selectedProject: undefined,
+                    projects: prevState.projects.filter((project) => project.id !== prevState.selectedProject)
+                }
+            }
+        )
+    }
+
 
 
     const selectedProject = projectState.projects.find((project) => project.id === projectState.selectedProject)
 
     // console.log(selectedProject);
 
-    let content = <SelectedProject project={selectedProject} />;
+    let content = <SelectedProject project={selectedProject} onDelete={handleDeleteProject} />;
 
     if (projectState.selectedProject === null) {
         content = <NewProject onAdd={handleAddProject} />

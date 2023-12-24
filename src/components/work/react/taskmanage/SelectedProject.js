@@ -1,4 +1,4 @@
-export default function SelectedProject({ project }) {
+export default function SelectedProject({ project, onDelete }) {
 
     console.log(project)
 
@@ -8,7 +8,7 @@ export default function SelectedProject({ project }) {
         <header>
             <div className="flex items-center justify-between">
                 <h1>{project.title}</h1>
-                <button>Delete</button>
+                <button onClick={onDelete}>Delete</button>
             </div>
             <p>{formatDate}</p>
             <p>{project.description}</p>
